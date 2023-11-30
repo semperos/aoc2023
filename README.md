@@ -1,0 +1,1 @@
+## Installation```Metacello new	repository: '';	baseline: 'DgAoc2023';	load```## Load Lepiter				After installing with Metacello, you will be able to execute```#BaselineOfDgAoc2023 asClass loadLepiter```
