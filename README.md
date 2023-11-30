@@ -1,1 +1,3 @@
-## Installation```Metacello new	repository: '';	baseline: 'DgAoc2023';	load```## Load Lepiter				After installing with Metacello, you will be able to execute```#BaselineOfDgAoc2023 asClass loadLepiter```
+## Installation```Metacello new	repository: 'github.com/semperos/aoc2023:main/src';	baseline: 'DgAoc2023';	load```## Load Lepiter				After installing with Metacello, you will be able to execute```#BaselineOfDgAoc2023 asClass loadLepiter```## CLI Usage
+
+`rm -rf /tmp/aoc2023 && mkdir /tmp/aoc2023 && ./GlamorousToolkit.app/Contents/MacOS/GlamorousToolkit-cli GlamorousToolkit.image exportAoc2023Book --target-dir=/tmp/aoc2023`
