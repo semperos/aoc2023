@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eu
+
+/tmp/gt/bin/GlamorousToolkit-cli /tmp/gt/GlamorousToolkit.image eval --save "Smalltalk globals at: #BaselineOfDgAoc2023 ifAbsent: [ Metacello new repository: 'gitlocal:///#{GITHUB_WORKSPACE}:main/src'; baseline: 'DgAoc2023'; load. Smalltalk saveSession ]. "

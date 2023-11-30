@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/tmp/gt/bin/GlamorousToolkit-cli /tmp/gt/GlamorousToolkit.image exportAoc2023Book
