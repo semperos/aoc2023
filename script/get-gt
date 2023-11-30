@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+require 'open-uri'
+
+image_dir = "/tmp/gt"
+puts "Deleting #{image_dir}"
+`rm -rf #{image_dir}`
+
+puts 'Fetching list of Glamorous Toolkit releases...'
+base_url = 'https://dl.feenk.com/gt/'
+html = open(base_url).read
+
+re = /href="(GlamorousToolkit-Linux-x86_64-v(.*?)\.zip)"/
+
+matches = html.scan re
+latest_zip = matches.collect { |m| m[0] }.sort.reverse.first
+
+puts "Downloading #{latest_zip}..."
+download_stream = open("#{base_url}#{latest_zip}")
+write_location = "/tmp/#{latest_zip}"
+
+if File.exist? write_location
+  puts "Deleting previous #{write_location} file"
+  File.delete write_location
+end
+
+puts "Writing download to #{write_location} ..."
+IO.copy_stream(download_stream, write_location)
+
+puts "Success! Wrote to #{write_location}"
+
+puts "Unarchiving GT to #{image_dir}"
+`unzip #{write_location} -d #{image_dir}`
+
+puts '✅ All done!'
