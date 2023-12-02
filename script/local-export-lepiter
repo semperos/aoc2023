@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+git co gh-pages && rm -rf docs && mkdir docs && $HOME/dev/gt/general.image/GlamorousToolkit.app/Contents/MacOS/GlamorousToolkit-cli $HOME/dev/gt/general.image/GlamorousToolkit.image exportAoc2023Book --target-dir=docs
